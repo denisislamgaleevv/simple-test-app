@@ -1,7 +1,7 @@
 import './App.css';
 import { Quiz } from './components/Quiz/Quiz';
 import { QuizPanel } from './components/QuizPanel/QuizPanel';
-
+import {React, useState} from 'react';
 
 function App() {
   const quizArr = [
@@ -50,7 +50,7 @@ function App() {
     quizName: 'Основы ООП', 
     test:[
     {
-        questionImage: 'https://www.it-world.ru/upload/iblock/3f6/6c5bvtxl1zu15ocotsmcsk1e6k2xi6ew/shutterstock_1033853617.jpg', 
+        questionImage: 'https://vertex-academy.com/tutorials/wp-content/uploads/2016/06/Vertex-Academy_if-construction.jpg', 
         questionText: 'Выберите правильную структуру альтернативного условного оператора (полный вариант).', 
         answerOptions: [
             {answerText: 'If <условие> Then <оператор 1>', isCorrect: true},
@@ -60,7 +60,7 @@ function App() {
         ]
     }, 
     {
-        questionImage: 'https://itproger.com/img/news/1564129400.jpg', 
+        questionImage: 'https://storage.theoryandpractice.ru/tnp/uploads/image_unit/000/157/306/image/startpage_post_65796b928b.jpg', 
         questionText: 'Что из этого не является циклом:', 
         answerOptions: [
             {answerText: 'Do While', isCorrect: false},
@@ -73,18 +73,38 @@ function App() {
   ]
 }
 ]
+const [quizVisibility, setQuizVisibility] = useState(false)
+const [tTest, setTTest] = useState([])
+const showTest = (elem) =>{
+  setQuizVisibility(true)
+  setTTest(elem.test)
+}
+const hideTest = () =>{
+  setQuizVisibility(false)  
+  
+}
   return (
-    <div className="App">
+    
+    <div className="App"> 
+     
+    {quizVisibility? 
+     <Quiz questions={tTest} hideTest = {hideTest}/>
+      : 
+    <div className="panel">
         {quizArr.map((elem) => 
-          <QuizPanel image = {elem.quizImage} name = {elem.quizName} /> //название и картинка
+          <QuizPanel 
+          image = {elem.quizImage} 
+          name = {elem.quizName}
+          showTest = {() => showTest(elem)}
+          
+          />  
         )}
+    </div>
+    }
+     {console.log(quizVisibility)}
     </div>
   );
 }
 export default App;
 
-//   { 
- // quizArr.map((elem) =>  {console.log(elem.questions)}   )
-      
-//} 
-
+ 

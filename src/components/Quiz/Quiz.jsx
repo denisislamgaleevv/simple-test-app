@@ -2,7 +2,7 @@
 import './Quiz.css';
 import {React, useState} from 'react';
 
-export const Quiz = ({questions}) => {
+export const Quiz = ({questions, hideTest}) => {
      
 
     const [currentQuestion, setCurrentQuestion] = useState(0)
@@ -40,6 +40,7 @@ export const Quiz = ({questions}) => {
      <div className='sectionScore'>
         <div>Правильных ответов {score} из {questions.length}</div>
         <button className='button' onClick={ refresh }>Пройти тест заново</button>
+        <button className='button' onClick={ hideTest }>Вернуться к выбору теста</button>
         </div>
         :
     <div className='quiz'>

@@ -1,0 +1,6 @@
+.panel{
+    max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
