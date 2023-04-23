@@ -13,3 +13,7 @@ export function QuizPanel({name, image, showTest}) {
   );
 }
  
+
+
+
+
