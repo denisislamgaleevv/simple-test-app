@@ -64,6 +64,19 @@ body{
 .image{
     width: 400px;
 }
+@media screen and (max-width: 650px) {
+    .Quiz   {
+        margin-top: 250px;
+        width: 380px;
+    }
+    .quizPanelImage{
+        width: 250px;
+        margin-left: 5%;
+    }
+    .image{
+        width: 340px;
+    }
+  }
 
 
 

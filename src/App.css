@@ -9,3 +9,12 @@
   margin-top: 60px;
 
 }
+@media screen and (max-width: 650px) {
+  .panel   {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      margin-top: 300px;
+  }
+  
+}
