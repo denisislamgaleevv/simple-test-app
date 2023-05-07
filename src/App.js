@@ -72,6 +72,36 @@ function App() {
     } 
   ]
 }
+, 
+  
+{                  //третий элемент
+  quizImage: 'https://waksoft.susu.ru/wp-content/uploads/2020/08/oop.jpg', 
+  quizName: 'Основы python', 
+  questions:[
+  {
+      questionImage: 'https://vertex-academy.com/tutorials/wp-content/uploads/2016/06/Vertex-Academy_if-construction.jpg', 
+      questionText: 'Выберите все варианты программ, которые выводят на экран текст «Здравствуй, мир!» (без кавычек).', 
+      answerOptions: [
+          {answerText: 'print("Здравствуй, мир!")', isCorrect: true},
+          {answerText: "print('Здравствуй', ' мир!')", isCorrect: false},
+          {answerText: 'print(Здравствуй, мир!)', isCorrect: false},
+          
+      ]
+  }, 
+  {
+      questionImage: 'https://sun9-78.userapi.com/impg/JBKKlEs81OcmYSrsFNjeHxG6A3dFvAAbSNNc8Q/j-tCLgmcbMQ.jpg?size=388x201&quality=96&sign=c0f5e2f18bbfdf7ff6e0b14998404ede&type=album', 
+      questionText: 'Что будет выведено на экран в результате выполнения следующей программы?', 
+      answerOptions: [
+          {answerText: 'число 18 выиграло', isCorrect: false},
+          {answerText: 'число b выиграло', isCorrect: false},
+          {answerText: 'число 35 выиграло', isCorrect: true},
+          {answerText: 'число a выиграло', isCorrect: false},
+       
+      ]
+  } 
+]
+}
+
 ]
 
 const [quizVisibility, setQuizVisibility] = useState(false)

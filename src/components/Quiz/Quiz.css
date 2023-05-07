@@ -1,82 +1,79 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: #000000;
-    font-family: 'Roboto', sans-serif;
-   
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #000000;
+  font-family: 'Roboto', sans-serif;
+ 
 }
 body{
-    background: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    width: 100%;
-    
+  background: #ceffc8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  
 }
 .Quiz{
-    background: rgb(255, 255, 255);
-    
-    min-height: 200px;
-    min-width: 200px;
-    border-radius: 15px;
-    padding: 20px;
-    display: flex;
-    box-shadow: 10px 10px 42px 0px black;
-    text-align: center;
-    align-items: center;
+  background: rgb(255, 255, 255);
+  
+  min-height: 200px;
+  min-width: 200px;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  box-shadow: 10px 10px 42px 0px black;
+  text-align: center;
+  align-items: center;
 }
 .quiz{
-   display: flex;
-   justify-content: space-between;
-   width: 100%;
-   text-align: center;
-   align-items: center;
+ display: flex;
+ justify-content: space-between;
+ width: 100%;
+ text-align: center;
+ align-items: center;
 }
 
 
 .answerSection{
-    width: 100%; 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  width: 100%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .button{
-    width: 100%;
-    font-size: 16px;
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-    padding: 5px;
-    cursor: pointer;
-    border: 2px solid rgb(0, 0, 0);
-    margin: 5px 0;
-    outline: none;
+  width: 100%;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  background-color: #ceffc8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  padding: 5px;
+  cursor: pointer;
+  border: 2px solid #89d080;
+  margin: 5px 0;
+  outline: none;
 }
 .button:hover{
-    background-color: rgb(195, 195, 195);
-    transition: all 0.3 ease;
+  background-color:#e8ffe6;
+  transition: all 0.3 ease;
 }
 .image{
-    width: 400px;
+  width: 400px;
 }
 @media screen and (max-width: 650px) {
-    .Quiz   {
-        margin-top: 250px;
-        width: 380px;
-    }
-    .quizPanelImage{
-        width: 250px;
-        margin-left: 5%;
-    }
-    .image{
-        width: 340px;
-    }
+  .Quiz   {
+      margin-top: 250px;
+      width: 380px;
   }
-
-
-
+  .quizPanelImage{
+      width: 250px;
+      margin-left: 5%;
+  }
+  .image{
+      width: 340px;
+  }
+}
