@@ -1,0 +1,25 @@
+.Register{
+    
+    text-align: center;
+    align-items: center;
+    background-color:  rgb(214,204,241); 
+    border-radius: 15px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding: 40px 10px 10px 10px;
+   height:275px;
+    width: 375px;
+}
+.inputReg{  
+font-size:20px;
+border: 0;
+margin-top: 20px;
+}
+.buttonContainer{
+    margin-top: 50px;
+}
+@media screen and (max-width: 650px) {
+    .Register{
+        margin-top: 200px;
+    }
+  }

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500&family=Rampart+One&display=swap');
 .header {
    overflow: hidden;
    background-color:  rgb(214,204,241); 
@@ -6,13 +7,13 @@
    top: 0; 
    left: 0;
    width: 100%;
-   border-bottom: 2px solid #000000;
+   border-bottom: 2px solid #666; 
   }
   
   /* Стиль ссылок шапки */
   .header a {
     float: left;
-    color: black;
+    color: #000000; 
     text-align: center;
     padding: 12px;
     text-decoration: none;
@@ -23,19 +24,21 @@
   
   /* Стиль ссылки логотипа */
   .header a.logo {
-    font-size: 25px;
+    font-size: 30px;
     font-weight: bold;
+    font-family: 'Rampart One', cursive;
+    margin-right: 30px;
   }
   
   /* Изменение цвета фона при наведении курсора */
   .header a:hover {
     background-color: #ffffff;
-    color: black;
+    color: #000000; 
   }
   
   /* Стиль активной/текущей ссылки */
   .header a.active {
-    background-color: rgb(0, 0, 0);
+    background-color: #666; 
     color: white;
    
   }
@@ -43,6 +46,7 @@
   /* Сдвигаем секцию со ссылками вправо */
   .header-right {
     float: right;
+    margin-right: 30px;
   }
   
   /* Медиа-запрос для адаптивности – когда ширина
@@ -54,7 +58,9 @@
       text-align: left;
     }
     .header-right {
-      float: none;
+      position: absolute;
+      top: 2%;
+      right:5%;
     }
   }
 

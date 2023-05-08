@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&family=Ubuntu:wght@500&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   color: #000000;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 body{
   background: #ffffff;
@@ -45,7 +46,7 @@ body{
 .button{
   width: 100%;
   font-size: 16px;
-  color: rgb(0, 0, 0);
+  color: #000000; 
   background-color:  rgb(255, 255, 255); 
   display: flex;
   justify-content: center;
@@ -53,7 +54,7 @@ body{
   border-radius: 15px;
   padding: 5px;
   cursor: pointer;
-  border: 2px solid #000000;
+  border: 2px solid #666; 
   margin: 5px 0;
   outline: none;
 }

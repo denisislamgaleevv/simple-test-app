@@ -3,6 +3,7 @@ import { Quiz } from './components/Quiz/Quiz';
 import { QuizPanel } from './components/QuizPanel/QuizPanel';
 import { Header } from './components/Header/Header';
 import {React, useState} from 'react';
+
 import { Register } from './components/Register/Register'; 
 import { Main } from './components/Main/Main';
 import {Routes, Route} from 'react-router-dom'; 
