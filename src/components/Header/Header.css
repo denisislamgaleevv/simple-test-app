@@ -29,7 +29,7 @@
   
   /* Изменение цвета фона при наведении курсора */
   .header a:hover {
-    background-color: #ddd;
+    background-color: #ffffff;
     color: black;
   }
   

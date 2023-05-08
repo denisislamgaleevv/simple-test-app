@@ -15,6 +15,7 @@ body{
   
 }
 .Quiz{
+  margin-top: 120px;
   background: rgb(214,204,241); 
   
   min-height: 200px;
@@ -22,7 +23,7 @@ body{
   border-radius: 15px;
   padding: 20px;
   display: flex;
-  box-shadow: 10px 10px 42px 0px black;
+   
   text-align: center;
   align-items: center;
 }
@@ -62,6 +63,7 @@ body{
 }
 .image{
   width: 400px;
+  
 }
 @media screen and (max-width: 650px) {
   .Quiz   {
