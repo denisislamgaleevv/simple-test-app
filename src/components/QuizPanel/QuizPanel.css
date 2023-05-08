@@ -2,13 +2,13 @@
 .QuizPanel{
     text-align: center;
     align-items: center;
-    background-color: rgb(255, 255, 255);
+    background-color:  rgb(214,204,241); 
     border-radius: 15px;
     margin-left: 10px;
     margin-bottom: 10px;
     padding: 10px 10px 10px 10px;
-    box-shadow: 10px 10px 42px 0px black;
-    width: 400px;
+  
+    width: 375px;
 }
 .quizPanelImageContainer{
     width: 300px;

@@ -3,11 +3,10 @@
   padding: 0;
   box-sizing: border-box;
   color: #000000;
-  font-family: 'Roboto', sans-serif;
- 
+  font-family: 'Nunito', sans-serif;
 }
 body{
-  background: #ceffc8;
+  background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +15,7 @@ body{
   
 }
 .Quiz{
-  background: rgb(255, 255, 255);
+  background: rgb(214,204,241); 
   
   min-height: 200px;
   min-width: 200px;
@@ -46,19 +45,19 @@ body{
   width: 100%;
   font-size: 16px;
   color: rgb(0, 0, 0);
-  background-color: #ceffc8;
+  background-color:  rgb(255, 255, 255); 
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 15px;
   padding: 5px;
   cursor: pointer;
-  border: 2px solid #89d080;
+  border: 2px solid #000000;
   margin: 5px 0;
   outline: none;
 }
 .button:hover{
-  background-color:#e8ffe6;
+  background-color:rgb(240, 237, 251); 
   transition: all 0.3 ease;
 }
 .image{
