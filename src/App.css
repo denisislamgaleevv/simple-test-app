@@ -23,7 +23,7 @@
   text-align: center;
 
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 800px) {
   .panel   {
       display: flex;
       flex-direction: column;

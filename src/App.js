@@ -10,11 +10,12 @@ import {Routes, Route} from 'react-router-dom';
 function App() {
   const quizArr = [
     {                  //первый элемент
-    quizImage: 'https://timeweb.com/media/articles/0001/08/thumb_7309_articles_standart.jpeg', 
+ 
     quizName: 'Базовые понятия программирования', 
+    time: 15, 
     questions:[
     {
-        questionImage: 'https://www.it-world.ru/upload/iblock/3f6/6c5bvtxl1zu15ocotsmcsk1e6k2xi6ew/shutterstock_1033853617.jpg', 
+         
         questionText: 'Самый быстрый язык программирования', 
         answerOptions: [
             {answerText: 'C++', isCorrect: true},
@@ -24,7 +25,7 @@ function App() {
         ]
     }, 
     {
-        questionImage: 'https://itproger.com/img/news/1564129400.jpg', 
+        
         questionText: 'Что не относится к структурам данных?', 
         answerOptions: [
             {answerText: 'Стек', isCorrect: false},
@@ -35,7 +36,7 @@ function App() {
         ]
     }, 
     {
-        questionImage: 'https://bookflow.ru/wp-content/uploads/2020/03/Adobe_Post_20181209_130627-min.jpg', 
+        
         questionText: 'Какая самая медленная сортировка массива?', 
         answerOptions: [
             {answerText: 'Пузырьковая', isCorrect: false},
@@ -49,11 +50,12 @@ function App() {
   , 
   
   {                  //второй элемент
-    quizImage: 'https://waksoft.susu.ru/wp-content/uploads/2020/08/oop.jpg', 
+ 
     quizName: 'Основы ООП', 
+    time: 15, 
     questions:[
     {
-        questionImage: 'https://vertex-academy.com/tutorials/wp-content/uploads/2016/06/Vertex-Academy_if-construction.jpg', 
+        
         questionText: 'Выберите правильную структуру альтернативного условного оператора (полный вариант).', 
         answerOptions: [
             {answerText: 'If <условие> Then <оператор 1>', isCorrect: true},
@@ -63,7 +65,7 @@ function App() {
         ]
     }, 
     {
-        questionImage: 'https://storage.theoryandpractice.ru/tnp/uploads/image_unit/000/157/306/image/startpage_post_65796b928b.jpg', 
+     
         questionText: 'Что из этого не является циклом:', 
         answerOptions: [
             {answerText: 'Do While', isCorrect: false},
@@ -78,11 +80,12 @@ function App() {
 , 
   
 {                  //третий элемент
-  quizImage: 'https://sky.pro/media/wp-content/uploads/2023/01/7.9.-kto-takoj-python-razrabotchik-i-kak-im-stat.png', 
+   
   quizName: 'Основы python', 
+  time: 10, 
   questions:[
   {
-      questionImage: 'https://vertex-academy.com/tutorials/wp-content/uploads/2016/06/Vertex-Academy_if-construction.jpg', 
+      
       questionText: 'Выберите все варианты программ, которые выводят на экран текст «Здравствуй, мир!» (без кавычек).', 
       answerOptions: [
           {answerText: 'print("Здравствуй, мир!")', isCorrect: true},
@@ -90,132 +93,12 @@ function App() {
           {answerText: 'print(Здравствуй, мир!)', isCorrect: false},
           
       ]
-  }, 
-  {
-      questionImage: 'https://sun9-78.userapi.com/impg/JBKKlEs81OcmYSrsFNjeHxG6A3dFvAAbSNNc8Q/j-tCLgmcbMQ.jpg?size=388x201&quality=96&sign=c0f5e2f18bbfdf7ff6e0b14998404ede&type=album', 
-      questionText: 'Что будет выведено на экран в результате выполнения следующей программы?', 
-      answerOptions: [
-          {answerText: 'число 18 выиграло', isCorrect: false},
-          {answerText: 'число b выиграло', isCorrect: false},
-          {answerText: 'число 35 выиграло', isCorrect: true},
-          {answerText: 'число a выиграло', isCorrect: false},
-       
-      ]
-  } 
-]
-}, 
-  
-{                  //третий элемент
-  quizImage: 'https://sky.pro/media/wp-content/uploads/2023/01/7.9.-kto-takoj-python-razrabotchik-i-kak-im-stat.png', 
-  quizName: 'Основы python', 
-  questions:[
-  {
-      questionImage: 'https://vertex-academy.com/tutorials/wp-content/uploads/2016/06/Vertex-Academy_if-construction.jpg', 
-      questionText: 'Выберите все варианты программ, которые выводят на экран текст «Здравствуй, мир!» (без кавычек).', 
-      answerOptions: [
-          {answerText: 'print("Здравствуй, мир!")', isCorrect: true},
-          {answerText: "print('Здравствуй', ' мир!')", isCorrect: false},
-          {answerText: 'print(Здравствуй, мир!)', isCorrect: false},
-          
-      ]
-  }, 
-  {
-      questionImage: 'https://sun9-78.userapi.com/impg/JBKKlEs81OcmYSrsFNjeHxG6A3dFvAAbSNNc8Q/j-tCLgmcbMQ.jpg?size=388x201&quality=96&sign=c0f5e2f18bbfdf7ff6e0b14998404ede&type=album', 
-      questionText: 'Что будет выведено на экран в результате выполнения следующей программы?', 
-      answerOptions: [
-          {answerText: 'число 18 выиграло', isCorrect: false},
-          {answerText: 'число b выиграло', isCorrect: false},
-          {answerText: 'число 35 выиграло', isCorrect: true},
-          {answerText: 'число a выиграло', isCorrect: false},
-       
-      ]
-  } 
-]
-}, 
-  
-{                  //третий элемент
-  quizImage: 'https://sky.pro/media/wp-content/uploads/2023/01/7.9.-kto-takoj-python-razrabotchik-i-kak-im-stat.png', 
-  quizName: 'Основы python', 
-  questions:[
-  {
-      questionImage: 'https://vertex-academy.com/tutorials/wp-content/uploads/2016/06/Vertex-Academy_if-construction.jpg', 
-      questionText: 'Выберите все варианты программ, которые выводят на экран текст «Здравствуй, мир!» (без кавычек).', 
-      answerOptions: [
-          {answerText: 'print("Здравствуй, мир!")', isCorrect: true},
-          {answerText: "print('Здравствуй', ' мир!')", isCorrect: false},
-          {answerText: 'print(Здравствуй, мир!)', isCorrect: false},
-          
-      ]
-  }, 
-  {
-      questionImage: 'https://sun9-78.userapi.com/impg/JBKKlEs81OcmYSrsFNjeHxG6A3dFvAAbSNNc8Q/j-tCLgmcbMQ.jpg?size=388x201&quality=96&sign=c0f5e2f18bbfdf7ff6e0b14998404ede&type=album', 
-      questionText: 'Что будет выведено на экран в результате выполнения следующей программы?', 
-      answerOptions: [
-          {answerText: 'число 18 выиграло', isCorrect: false},
-          {answerText: 'число b выиграло', isCorrect: false},
-          {answerText: 'число 35 выиграло', isCorrect: true},
-          {answerText: 'число a выиграло', isCorrect: false},
-       
-      ]
-  } 
-]
-}, 
-  
-{                  //третий элемент
-  quizImage: 'https://sky.pro/media/wp-content/uploads/2023/01/7.9.-kto-takoj-python-razrabotchik-i-kak-im-stat.png', 
-  quizName: 'Основы python', 
-  questions:[
-  {
-      questionImage: 'https://vertex-academy.com/tutorials/wp-content/uploads/2016/06/Vertex-Academy_if-construction.jpg', 
-      questionText: 'Выберите все варианты программ, которые выводят на экран текст «Здравствуй, мир!» (без кавычек).', 
-      answerOptions: [
-          {answerText: 'print("Здравствуй, мир!")', isCorrect: true},
-          {answerText: "print('Здравствуй', ' мир!')", isCorrect: false},
-          {answerText: 'print(Здравствуй, мир!)', isCorrect: false},
-          
-      ]
-  }, 
-  {
-      questionImage: 'https://sun9-78.userapi.com/impg/JBKKlEs81OcmYSrsFNjeHxG6A3dFvAAbSNNc8Q/j-tCLgmcbMQ.jpg?size=388x201&quality=96&sign=c0f5e2f18bbfdf7ff6e0b14998404ede&type=album', 
-      questionText: 'Что будет выведено на экран в результате выполнения следующей программы?', 
-      answerOptions: [
-          {answerText: 'число 18 выиграло', isCorrect: false},
-          {answerText: 'число b выиграло', isCorrect: false},
-          {answerText: 'число 35 выиграло', isCorrect: true},
-          {answerText: 'число a выиграло', isCorrect: false},
-       
-      ]
-  } 
-]
-}, 
-  
-{                  //третий элемент
-  quizImage: 'https://sky.pro/media/wp-content/uploads/2023/01/7.9.-kto-takoj-python-razrabotchik-i-kak-im-stat.png', 
-  quizName: 'Основы python', 
-  questions:[
-  {
-      questionImage: 'https://vertex-academy.com/tutorials/wp-content/uploads/2016/06/Vertex-Academy_if-construction.jpg', 
-      questionText: 'Выберите все варианты программ, которые выводят на экран текст «Здравствуй, мир!» (без кавычек).', 
-      answerOptions: [
-          {answerText: 'print("Здравствуй, мир!")', isCorrect: true},
-          {answerText: "print('Здравствуй', ' мир!')", isCorrect: false},
-          {answerText: 'print(Здравствуй, мир!)', isCorrect: false},
-          
-      ]
-  }, 
-  {
-      questionImage: 'https://sun9-78.userapi.com/impg/JBKKlEs81OcmYSrsFNjeHxG6A3dFvAAbSNNc8Q/j-tCLgmcbMQ.jpg?size=388x201&quality=96&sign=c0f5e2f18bbfdf7ff6e0b14998404ede&type=album', 
-      questionText: 'Что будет выведено на экран в результате выполнения следующей программы?', 
-      answerOptions: [
-          {answerText: 'число 18 выиграло', isCorrect: false},
-          {answerText: 'число b выиграло', isCorrect: false},
-          {answerText: 'число 35 выиграло', isCorrect: true},
-          {answerText: 'число a выиграло', isCorrect: false},
-       
-      ]
-  } 
+  }
 ]
 }
+ 
+   
+ 
 
 ]
 
@@ -245,7 +128,10 @@ const hideTest = () =>{
             : 
             <div className="panel">
               {quizArr.map((elem) => 
+              
                 <QuizPanel 
+                  time = {elem.time}
+                  len = {elem.questions.length}
                   image = {elem.quizImage} 
                   name = {elem.quizName}
                   showTest = {() => showTest(elem)}

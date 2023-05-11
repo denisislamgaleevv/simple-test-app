@@ -10,20 +10,22 @@
   
     width: 375px;
 }
-.quizPanelImageContainer{
-    width: 300px;
-    height: 250px;
-    display: flex;
+.testH{
+    margin: 10px 0 10px 0;
 }
-.quizPanelImage{
-    width: 300px;
-    justify-content: center;
-    align-items: center;
-    margin-left: 11%;
-    border-radius: 5%;
+.len{
+    margin-bottom: 10px;
+    color:  #532d2d; 
 }
- 
-@media screen and (max-width: 650px) {
+.timeDiv{
+    text-align: left;
+    width: 100%;
+}
+.InfoIcon{
+    float: right;
+    cursor: pointer;
+}
+@media screen and (max-width: 800px) {
     .QuizPanel   {
         width: 300px;
     }

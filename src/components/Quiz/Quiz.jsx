@@ -1,7 +1,8 @@
  
 import './Quiz.css';
 import {React, useState} from 'react';
-
+import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt'; 
+import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt';
 export const Quiz = ({questions, hideTest}) => {
      
 
@@ -20,7 +21,14 @@ export const Quiz = ({questions, hideTest}) => {
             setShowScore(true)
         }
     }
-
+    function renderTestResultIcon(correctAnswers){ //80%
+        if (correctAnswers>0.8*questions.length){
+            return <ThumbUpAltIcon/> 
+        }
+        else{ 
+            return <ThumbDownAltIcon/> 
+        }
+    }
 
 
     const refresh = ()=>{
@@ -38,6 +46,7 @@ export const Quiz = ({questions, hideTest}) => {
      {
      showScore? 
      <div className='sectionScore'>
+        { renderTestResultIcon(score)}
         <div>Правильных ответов {score} из {questions.length}</div>
         <button className='button' onClick={ refresh }>Пройти тест заново</button>
         <button className='button' onClick={ hideTest }>Вернуться к выбору теста</button>
@@ -47,9 +56,7 @@ export const Quiz = ({questions, hideTest}) => {
         
         <div className='questionSection'>
 
-            <div className='imageSection'>
-                <img className = 'image' src = {questions[currentQuestion].questionImage} alt='Image'/>
-            </div>
+             
 
             <div className='questionCount'>
                 <span>Вопрос {currentQuestion +1}</span>/{questions.length}

@@ -51,7 +51,7 @@
   
   /* Медиа-запрос для адаптивности – когда ширина
     экрана 650px или меньше, ссылки будут друг над другом */
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 800px) {
     .header a {
       float: none;
       display: block;
@@ -63,7 +63,7 @@
       right:5%;
     }
   }
-
+  
 
 .name{
  font-size: 24px;
