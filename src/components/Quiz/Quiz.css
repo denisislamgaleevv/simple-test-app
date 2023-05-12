@@ -36,7 +36,10 @@ body{
  align-items: center;
 }
 
-
+.questionText{
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
 .answerSection{
   width: 100%; 
   display: flex;
@@ -62,9 +65,16 @@ body{
   background-color:rgb(240, 237, 251); 
   transition: all 0.3 ease;
 }
-.image{
-  width: 400px;
-  
+ 
+.timeContainer{
+  margin-bottom: 15px;
+
+}
+.timer{ 
+   
+}
+.AccessTimeIcon{
+  font-size: 10px;
 }
 @media screen and (max-width: 650px) {
   .Quiz   {

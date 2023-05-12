@@ -3,7 +3,7 @@ import { Quiz } from './components/Quiz/Quiz';
 import { QuizPanel } from './components/QuizPanel/QuizPanel';
 import { Header } from './components/Header/Header';
 import {React, useState} from 'react';
-
+import SearchIcon from '@mui/icons-material/Search';
 import { Register } from './components/Register/Register'; 
 import { Main } from './components/Main/Main';
 import {Routes, Route} from 'react-router-dom'; 
@@ -12,7 +12,7 @@ function App() {
     {                  //первый элемент
  
     quizName: 'Базовые понятия программирования', 
-    time: 15, 
+    time: 1, 
     questions:[
     {
          
@@ -51,30 +51,65 @@ function App() {
   
   {                  //второй элемент
  
-    quizName: 'Основы ООП', 
+    quizName: 'Столицы', 
     time: 15, 
     questions:[
     {
         
-        questionText: 'Выберите правильную структуру альтернативного условного оператора (полный вариант).', 
+        questionText: 'Столицей Франции является город:', 
         answerOptions: [
-            {answerText: 'If <условие> Then <оператор 1>', isCorrect: true},
-            {answerText: 'If <условие> Then <оператор 1> Else <оператор 2>', isCorrect: false},
-            {answerText: 'If <условие> THEN <оператор 1> <оператор 2>', isCorrect: false},
-            {answerText: 'If <условие1> Then If <условие2> Then <оператор1> <оператор2>', isCorrect: false}
+            {answerText: 'Брюссель', isCorrect: false},
+            {answerText: 'Париж', isCorrect: true},
+            {answerText: 'Мадрид', isCorrect: false},
+            {answerText: 'Лиссабон', isCorrect: false}
         ]
     }, 
     {
      
-        questionText: 'Что из этого не является циклом:', 
+        questionText: 'Столицей США является город:', 
         answerOptions: [
-            {answerText: 'Do While', isCorrect: false},
-            {answerText: 'Do Until', isCorrect: false},
-            {answerText: 'Select case', isCorrect: true},
-            {answerText: 'For …Next', isCorrect: false},
+            {answerText: 'Голливуд', isCorrect: false},
+            {answerText: 'Нью-Йорк', isCorrect: false},
+            {answerText: 'Вашингтон', isCorrect: true},
+            {answerText: 'Бостон', isCorrect: false},
          
         ]
-    } 
+    } ,
+    {
+     
+      questionText: 'Столицей Южной Кореи является город:', 
+      answerOptions: [
+          {answerText: 'Сеул', isCorrect:true},
+          {answerText: 'Пхеньян', isCorrect: false},
+          {answerText: 'Таубей', isCorrect: false},
+          {answerText: 'Дакка', isCorrect: false},
+       
+      ]
+  } 
+  ,
+    {
+     
+      questionText: 'Столицей Турции является город:', 
+      answerOptions: [
+          {answerText: 'Анталия', isCorrect:false},
+          {answerText: 'Анкара', isCorrect: true},
+          {answerText: 'Стамбул', isCorrect: false},
+          {answerText: 'Измир', isCorrect: false},
+       
+      ]
+  } 
+  ,
+    {
+     
+      questionText: 'Административной столицей ЮАР является город:', 
+      answerOptions: [
+          {answerText: 'Йоханнесбург', isCorrect:false},
+          {answerText: 'Кейптаун', isCorrect: false},
+          {answerText: 'Претория', isCorrect: true},
+          {answerText: 'Дурбан', isCorrect: false},
+       
+      ]
+  } 
   ]
 }
 , 
@@ -96,19 +131,94 @@ function App() {
   }
 ]
 }
- 
+, 
+  
+{                  //третий элемент
+   
+  quizName: 'Основы python', 
+  time: 10, 
+  questions:[
+  {
+      
+      questionText: 'Выберите все варианты программ, которые выводят на экран текст «Здравствуй, мир!» (без кавычек).', 
+      answerOptions: [
+          {answerText: 'print("Здравствуй, мир!")', isCorrect: true},
+          {answerText: "print('Здравствуй', ' мир!')", isCorrect: false},
+          {answerText: 'print(Здравствуй, мир!)', isCorrect: false},
+          
+      ]
+  }
+]
+}
+, 
+  
+{                  //третий элемент
+   
+  quizName: 'Основы python', 
+  time: 10, 
+  questions:[
+  {
+      
+      questionText: 'Выберите все варианты программ, которые выводят на экран текст «Здравствуй, мир!» (без кавычек).', 
+      answerOptions: [
+          {answerText: 'print("Здравствуй, мир!")', isCorrect: true},
+          {answerText: "print('Здравствуй', ' мир!')", isCorrect: false},
+          {answerText: 'print(Здравствуй, мир!)', isCorrect: false},
+          
+      ]
+  }
+]
+}
+, 
+  
+{                  //третий элемент
+   
+  quizName: 'Основы python', 
+  time: 10, 
+  questions:[
+  {
+      
+      questionText: 'Выберите все варианты программ, которые выводят на экран текст «Здравствуй, мир!» (без кавычек).', 
+      answerOptions: [
+          {answerText: 'print("Здравствуй, мир!")', isCorrect: true},
+          {answerText: "print('Здравствуй', ' мир!')", isCorrect: false},
+          {answerText: 'print(Здравствуй, мир!)', isCorrect: false},
+          
+      ]
+  }
+]
+}
+, 
+  
+{                  //третий элемент
+   
+  quizName: 'Основы python', 
+  time: 10, 
+  questions:[
+  {
+      
+      questionText: 'Выберите все варианты программ, которые выводят на экран текст «Здравствуй, мир!» (без кавычек).', 
+      answerOptions: [
+          {answerText: 'print("Здравствуй, мир!")', isCorrect: true},
+          {answerText: "print('Здравствуй', ' мир!')", isCorrect: false},
+          {answerText: 'print(Здравствуй, мир!)', isCorrect: false},
+          
+      ]
+  }
+]
+}
    
  
 
 ]
-
+const [searchValue, setSearchValue] = useState('');
 const [quizVisibility, setQuizVisibility] = useState(false)
 const [tTest, setTTest] = useState([])
 
 
 const showTest = (elem) =>{
   setQuizVisibility(true)
-  setTTest(elem.questions)
+  setTTest(elem)
 }
 const hideTest = () =>{
   setQuizVisibility(false)  
@@ -124,10 +234,25 @@ const hideTest = () =>{
        <Routes>  
         <Route path='/test' element= {  <> 
           {quizVisibility? 
-            <Quiz questions={tTest} hideTest = {hideTest}/>
+            <Quiz 
+            questions={tTest.questions} 
+            hideTest = {hideTest}
+            time = {tTest.time}
+            />
             : 
+            <div className='AppContainer'> 
+            <div className="inputDiv">  
+             <input  value = {searchValue}                        
+                  onChange={e => setSearchValue(e.target.value)} 
+                  className="search-input" 
+                  placeholder= { "Поиск по названию" }
+              />
+              </div>
             <div className="panel">
-              {quizArr.map((elem) => 
+               
+              {quizArr 
+              .filter((elem)=> elem.quizName.toLowerCase().includes(searchValue.toLowerCase()))
+              .map((elem) => 
               
                 <QuizPanel 
                   time = {elem.time}
@@ -137,6 +262,7 @@ const hideTest = () =>{
                   showTest = {() => showTest(elem)}
                 />  
               )}
+            </div>
             </div>
           } </> }/> 
       <Route path='/register' element={<Register/>}/> 

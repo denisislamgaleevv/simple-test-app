@@ -1,15 +1,35 @@
  
 import './Quiz.css';
-import {React, useState} from 'react';
+import {React, useState, useEffect} from 'react';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt'; 
 import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt';
-export const Quiz = ({questions, hideTest}) => {
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+export const Quiz = ({questions, hideTest, time}) => {
      
 
     const [currentQuestion, setCurrentQuestion] = useState(0)
     const [score, setScore]  = useState(0)
     const [showScore, setShowScore] = useState(false)
+ 
+    const [isCounting, setIsCounting]= useState(false)//timer
+    const [timeLeft, setTimeLeft] = useState(time*60)  
+    const getPadTime = (time) =>time.toString().padStart(2, '0');;
+    const minutes = getPadTime(Math.floor(timeLeft/60)); 
+    const seconds = getPadTime(timeLeft - minutes*60); 
+    useEffect(() =>{
+        
+        const interval = setInterval(()=>{
+          
+            setTimeLeft((timeLeft) => (timeLeft >= 1 ? timeLeft-1: 0))
+        }, 1000); 
+      
+        return () => clearInterval( interval);
+    
+     }, [])
+    
+    const handleStart = () =>{
 
+    }
     const handleAnswerOptionClick = (isCorrect) =>{
         if (isCorrect){
             setScore(score+1)
@@ -35,35 +55,55 @@ export const Quiz = ({questions, hideTest}) => {
         setCurrentQuestion(0)
         setScore(0)
         setShowScore(false)
+        setTimeLeft(time*60)
     }
-    
+    function renderScore(){
+        if ((minutes.toString() === '00' && seconds.toString() === '00')){
+            return (
+        <div className='sectionScore'>
+           { renderTestResultIcon(score)}
+           <h3>Время вышло!</h3>
+           <div>Правильных ответов {score} из {questions.length}</div>
+           <button className='button' onClick={ refresh }>Пройти тест заново</button>
+           <button className='button' onClick={ hideTest }>Вернуться к выбору теста</button>
+           </div>)
+        }
+        else return (
+            <div className='sectionScore'>
+               { renderTestResultIcon(score)}
+               
+               <div>Правильных ответов {score} из {questions.length}</div>
+               <button className='button' onClick={ refresh }>Пройти тест заново</button>
+               <button className='button' onClick={ hideTest }>Вернуться к выбору теста</button>
+               </div>)
+            }
+     
+     //(minutes.toString() === '00' && seconds.toString() === '00')
+     // {(minutes.toString() === '00' && seconds.toString() === '00') ? <h3>Время вышло!</h3> : <></>}
   return (
     <div className="Quiz">
-        {questions.map(()=>
-        {console.log(questions)}
-        )}
+         {() => setIsCounting(true) }
+        
+        
           <div className="quiz">  
      {
-     showScore? 
-     <div className='sectionScore'>
-        { renderTestResultIcon(score)}
-        <div>Правильных ответов {score} из {questions.length}</div>
-        <button className='button' onClick={ refresh }>Пройти тест заново</button>
-        <button className='button' onClick={ hideTest }>Вернуться к выбору теста</button>
-        </div>
+         (showScore ||(minutes.toString() === '00' && seconds.toString() === '00')   )?
+          <> {renderScore()} </>  
         :
     <div className='quiz'>
-        
+          
         <div className='questionSection'>
 
-             
+        <div className='timeContainer'>  
+           <p className='timer'>  <AccessTimeIcon className='AccessTimeIcon'/>  {minutes}  : {seconds}  </p> 
+        </div>
 
             <div className='questionCount'>
                 <span>Вопрос {currentQuestion +1}</span>/{questions.length}
             </div>
 
             <div className='questionText'>
-              {questions[currentQuestion].questionText}
+              <h3>  {questions[currentQuestion].questionText}</h3>
             </div>
 
             <div className='answerSection'>

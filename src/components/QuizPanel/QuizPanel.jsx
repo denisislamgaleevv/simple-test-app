@@ -1,8 +1,9 @@
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import InfoIcon from '@mui/icons-material/Info';
 import './QuizPanel.css';
-
+ 
 export function QuizPanel({name, image, showTest, len, time}) {
+ 
   function renderLen(l) {
     if (len %10 == 1 && len !== 11) {
       return  <h4 className='len'>{len} вопрос</h4> 
@@ -14,14 +15,28 @@ export function QuizPanel({name, image, showTest, len, time}) {
       return  <h4 className='len'>{len} вопросов</h4> 
     }
   }
+  function renderTime(l) {
+    
+    if ((len %10 == 2 || len %10 == 3 || len %10 == 4)&& len !== 12 && len !== 13 && len !== 14) {
+      return  <span> {l} минута</span>  
+    }
+    else   {
+      return  <span> {l} минут</span>  
+    }
+    
+  }
   const infoIconClickHandler = () =>{
     alert('Этот тест хороший' )
   }
   return (
+    
     <div className="QuizPanel">
+       
+       
+
       <div className='timeDiv'>  
       <InfoIcon className='InfoIcon' onClick = {infoIconClickHandler} /> 
-      <AccessTimeIcon/> <p className='time'> {time} минут </p>
+      <AccessTimeIcon/> <p className='time'>{renderTime(time)} </p>
       
      
      
