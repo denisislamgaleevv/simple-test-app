@@ -7,7 +7,7 @@ export function Header( ) {
   <div className="header">
     <a href="/" className="logo">SmartTest</a>
         <a href="/test">Тесты</a>
-        <a>Статистика</a> 
+        <a href="/statistics" >Статистика</a> 
         <a  href="/register" >Регистрация</a>
           <div className="header-right">
         <FaceIcon/><span className = 'name'>  Денис И.</span><br/>

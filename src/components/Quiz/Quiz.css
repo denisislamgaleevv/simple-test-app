@@ -61,6 +61,57 @@ body{
   margin: 5px 0;
   outline: none;
 }
+.buttonGreen{
+  width: 100%;
+  font-size: 16px;
+  color: #000000; 
+  background-color:  rgb(124, 255, 133); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  padding: 5px;
+ 
+  border: 2px solid #666; 
+  margin: 5px 0;
+  outline: none;
+}
+.buttonRed{
+  width: 100%;
+  font-size: 16px;
+  color: #000000; 
+  background-color:  rgb(255, 167, 143); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  padding: 5px;
+ 
+  border: 2px solid #666; 
+  margin: 5px 0;
+  outline: none;
+}
+.buttonNext{
+  margin-top: 30px;
+  width: 100%;
+  
+  font-size: 16px;
+  color: #000000; 
+  background-color:  rgb(255, 255, 255); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  padding: 5px;
+  cursor: pointer;
+  border: 2px solid #666; 
+ 
+  outline: none;
+}
+.buttonNext:hover{
+  background-color:rgb(240, 237, 251); 
+  transition: all 0.3 ease;
+}
 .button:hover{
   background-color:rgb(240, 237, 251); 
   transition: all 0.3 ease;
@@ -75,6 +126,9 @@ body{
 }
 .AccessTimeIcon{
   font-size: 10px;
+}
+.scoreHeader{
+  margin-bottom: 10px;
 }
 @media screen and (max-width: 650px) {
   .Quiz   {

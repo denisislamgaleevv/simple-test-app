@@ -7,6 +7,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Register } from './components/Register/Register'; 
 import { Main } from './components/Main/Main';
 import {Routes, Route} from 'react-router-dom'; 
+import { Statistics } from './components/Statistics/Statistics';
 function App() {
   const quizArr = [
     {                  //первый элемент
@@ -52,7 +53,7 @@ function App() {
   {                  //второй элемент
  
     quizName: 'Столицы', 
-    time: 15, 
+    time: 2, 
     questions:[
     {
         
@@ -117,7 +118,7 @@ function App() {
 {                  //третий элемент
    
   quizName: 'Основы python', 
-  time: 10, 
+  time: 5, 
   questions:[
   {
       
@@ -136,7 +137,7 @@ function App() {
 {                  //третий элемент
    
   quizName: 'Основы python', 
-  time: 10, 
+  time: 14, 
   questions:[
   {
       
@@ -247,7 +248,10 @@ const hideTest = () =>{
                   className="search-input" 
                   placeholder= { "Поиск по названию" }
               />
+              <button className='buttonMarafon'>Марафон</button>
+              <button className='buttonMarafon'>Мои ошибки</button>
               </div>
+              <div className="container">
             <div className="panel">
                
               {quizArr 
@@ -264,7 +268,9 @@ const hideTest = () =>{
               )}
             </div>
             </div>
+            </div>
           } </> }/> 
+          <Route path =  '/statistics' element={<Statistics stquestions = {quizArr} />}/> 
       <Route path='/register' element={<Register/>}/> 
       <Route path='/' element={<Main/>}/> 
       </Routes>

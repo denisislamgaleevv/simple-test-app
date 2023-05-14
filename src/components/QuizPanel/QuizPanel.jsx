@@ -17,8 +17,11 @@ export function QuizPanel({name, image, showTest, len, time}) {
   }
   function renderTime(l) {
     
-    if ((len %10 == 2 || len %10 == 3 || len %10 == 4)&& len !== 12 && len !== 13 && len !== 14) {
+    if ((l %10 == 1  ) && l !== 12 && l !== 13 && l !== 14) {
       return  <span> {l} минута</span>  
+    }
+    else if ((l %10 == 2 || l %10 == 3 || l %10 == 4)&& l !== 12 && l !== 13 && l !== 14)  {
+      return  <span> {l} минуты</span>  
     }
     else   {
       return  <span> {l} минут</span>  

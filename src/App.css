@@ -6,7 +6,7 @@
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 30px;
   grid-row-gap: 30px;
-  margin-top: 100px;
+  
 
   @media (max-width: 1200px) {
     grid-template-columns: repeat(2, 1fr);
@@ -17,13 +17,18 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
-.inputDiv{
-   margin-top: 100px;
-  
-  
-}
 .AppContainer{
-   
+  width: 100%;
+}
+.inputDiv{
+   width: 100%;
+   margin-top: 100px;
+   margin-bottom: 30px;
+   border-bottom: 2px solid #666; 
+}
+.container{ 
+  
+ 
 }
 .search-input{
  
@@ -31,6 +36,30 @@
   border: 0;
   margin-top: 20px;
   width: 200px;
+  display: inline-block;
+  margin-bottom: 30px;
+  
+}
+.buttonMarafon{
+  width: 200px;
+  margin-left: 10px;
+  font-size: 16px;
+  color: #000000; 
+  background-color:  rgb(255, 255, 255); 
+  
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  padding: 5px;
+  cursor: pointer;
+  border: 2px solid #666; 
+  
+  outline: none;
+  display: inline-block;
+}
+.buttonMarafon:hover{
+  background-color:rgb(240, 237, 251); 
+  transition: all 0.3 ease;
 }
 .App{
   
@@ -47,8 +76,19 @@
   }
   .inputDiv{
     margin-top: 250px;
+    
    
-   
+ }
+ .buttonMarafon {
+  float: none;
+  display: block;
+  text-align: left;
+  margin-bottom: 20px;
+ }
+ .search-input{
+  float: none;
+  display: block;
+  text-align: left;
  }
   
 }

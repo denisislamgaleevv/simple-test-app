@@ -4,13 +4,14 @@ import {React, useState, useEffect} from 'react';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt'; 
 import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 export const Quiz = ({questions, hideTest, time}) => {
      
 
     const [currentQuestion, setCurrentQuestion] = useState(0)
     const [score, setScore]  = useState(0)
     const [showScore, setShowScore] = useState(false)
- 
+    const [buttonColorVisibility, setButtonColorVisibility] = useState(false)
     const [isCounting, setIsCounting]= useState(false)//timer
     const [timeLeft, setTimeLeft] = useState(time*60)  
     const getPadTime = (time) =>time.toString().padStart(2, '0');;
@@ -34,12 +35,7 @@ export const Quiz = ({questions, hideTest, time}) => {
         if (isCorrect){
             setScore(score+1)
         }
-        const nextQuestion = currentQuestion+1
-        if (nextQuestion < questions.length){
-            setCurrentQuestion(nextQuestion)
-        } else {
-            setShowScore(true)
-        }
+        setButtonColorVisibility(true)
     }
     function renderTestResultIcon(correctAnswers){ //80%
         if (correctAnswers>0.8*questions.length){
@@ -49,7 +45,20 @@ export const Quiz = ({questions, hideTest, time}) => {
             return <ThumbDownAltIcon/> 
         }
     }
-
+    const handleNextQuestion = () =>{
+        if (buttonColorVisibility){
+            const nextQuestion = currentQuestion+1
+            if (nextQuestion < questions.length){
+                setCurrentQuestion(nextQuestion)
+            } else {
+                setShowScore(true)
+            }
+            setButtonColorVisibility(false)
+        }
+        else{
+            alert('Выберите ответ!')
+        }
+    }
 
     const refresh = ()=>{
         setCurrentQuestion(0)
@@ -58,7 +67,7 @@ export const Quiz = ({questions, hideTest, time}) => {
         setTimeLeft(time*60)
     }
     function renderScore(){
-        if ((minutes.toString() === '00' && seconds.toString() === '00')){
+        if ((minutes.toString() === '00' && seconds.toString() === '00')&& (!showScore)){
             return (
         <div className='sectionScore'>
            { renderTestResultIcon(score)}
@@ -93,11 +102,11 @@ export const Quiz = ({questions, hideTest, time}) => {
     <div className='quiz'>
           
         <div className='questionSection'>
-
+        
         <div className='timeContainer'>  
-           <p className='timer'>  <AccessTimeIcon className='AccessTimeIcon'/>  {minutes}  : {seconds}  </p> 
+          <p className='timer'>   <AccessTimeIcon className='AccessTimeIcon'/>  {minutes}  : {seconds}  </p> 
         </div>
-
+        <h3 className='scoreHeader'>  Верных ответов: {score} из {currentQuestion+1}</h3>
             <div className='questionCount'>
                 <span>Вопрос {currentQuestion +1}</span>/{questions.length}
             </div>
@@ -105,16 +114,37 @@ export const Quiz = ({questions, hideTest, time}) => {
             <div className='questionText'>
               <h3>  {questions[currentQuestion].questionText}</h3>
             </div>
-
+            
             <div className='answerSection'>
               {questions[currentQuestion].answerOptions.map((item)=>(
+                <>  
+                 {!buttonColorVisibility?
                 <button
                 onClick={()=>handleAnswerOptionClick(item.isCorrect)}
                 className={'button'}
-                >{item.answerText}</button>     
+                >{item.answerText}</button> : 
+                <>
+                {item.isCorrect?
+                <button
+                onClick={()=>handleAnswerOptionClick(item.isCorrect)}
+                className={'buttonGreen'}
+                >{item.answerText}</button> : 
+                <button
+                onClick={()=>handleAnswerOptionClick(item.isCorrect)}
+                className={'buttonRed'}
+                >{item.answerText}</button>}
+                </>}
+                
+                </>
                 ))}
-            </div>
+                 </div>
             
+
+            
+             <button
+                onClick={()=>handleNextQuestion()}
+                className={'buttonNext'}
+                >Следующий вопрос <ArrowForwardIcon/></button>
         </div>
         
     </div>
