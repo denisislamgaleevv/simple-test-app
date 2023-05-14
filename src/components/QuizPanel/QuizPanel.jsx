@@ -2,7 +2,7 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import InfoIcon from '@mui/icons-material/Info';
 import './QuizPanel.css';
  
-export function QuizPanel({name, image, showTest, len, time}) {
+export function QuizPanel({name, image, showTest, len, time }) {
  
   function renderLen(l) {
     if (len %10 == 1 && len !== 11) {

@@ -26,10 +26,7 @@
    margin-bottom: 30px;
    border-bottom: 2px solid #666; 
 }
-.container{ 
-  
  
-}
 .search-input{
  
   font-size:20px;
@@ -78,6 +75,12 @@
     margin-top: 250px;
     
    
+ }
+ .marathonPanel{
+  display: flex;
+  text-align: center;
+  width: 100%;
+  align-items: center;
  }
  .buttonMarafon {
   float: none;

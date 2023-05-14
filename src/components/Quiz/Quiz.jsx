@@ -5,7 +5,7 @@ import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-export const Quiz = ({questions, hideTest, time}) => {
+export const Quiz = ({questions, hideTest, time,  setMarathonVisibility}) => {
      
 
     const [currentQuestion, setCurrentQuestion] = useState(0)
