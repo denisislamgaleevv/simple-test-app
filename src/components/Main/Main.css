@@ -1,0 +1,16 @@
+.mainImg{
+    position: absolute;
+    bottom: 0; 
+    width: 40%;
+    right: 30%;
+    z-index: -1000;
+}
+.mainTextContainer{
+    position: absolute;
+    top: 35%;
+    width: 50%;
+    right: 25%;
+    background-color: rgb(214,204,241);
+    border-radius: 15px;
+    padding: 10px 10px 10px 10px;
+}

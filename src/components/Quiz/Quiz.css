@@ -13,12 +13,13 @@ body{
   align-items: center;
   min-height: 100vh;
   width: 100%;
-  
+ 
 }
 .Quiz{
-  margin-top: 120px;
+  margin-top: 8%;
   background: rgb(214,204,241); 
-  
+  width: 80%;
+  margin-left: 10%;
   min-height: 200px;
   min-width: 200px;
   border-radius: 15px;
@@ -130,16 +131,10 @@ body{
 .scoreHeader{
   margin-bottom: 10px;
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 800px) {
   .Quiz   {
       margin-top: 250px;
-      width: 380px;
+      
   }
-  .quizPanelImage{
-      width: 250px;
-      margin-left: 5%;
-  }
-  .image{
-      width: 340px;
-  }
+   
 }

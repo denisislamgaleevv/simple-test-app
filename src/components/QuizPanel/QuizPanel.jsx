@@ -1,9 +1,9 @@
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import InfoIcon from '@mui/icons-material/Info';
 import './QuizPanel.css';
- 
-export function QuizPanel({name, image, showTest, len, time }) {
- 
+import { QuizInfo } from './QuizInfo/QuizInfo';
+export function QuizPanel({copyArr, name,  id, quizDescription, author, showTest, len, time, showInfo, infoVisibility,  setInfoVisibility, num}) {
+   
   function renderLen(l) {
     if (len %10 == 1 && len !== 11) {
       return  <h4 className='len'>{len} вопрос</h4> 
@@ -28,17 +28,31 @@ export function QuizPanel({name, image, showTest, len, time }) {
     }
     
   }
-  const infoIconClickHandler = () =>{
-    alert('Этот тест хороший' )
+  const hideInfo = () =>{
+    setInfoVisibility(false)
+    
   }
   return (
+    <>  
+    {infoVisibility? 
+      <>{
+          
+    <QuizInfo 
+    quizDescription = {copyArr[num].quizDescription}
+    author = {copyArr[num].author}
+    hideInfo = {hideInfo}
+    time = {time}
+    name = {copyArr[num].name}
     
+    />
+     
+    }</>   
+    :<></> }
     <div className="QuizPanel">
-       
-       
+         
 
       <div className='timeDiv'>  
-      <InfoIcon className='InfoIcon' onClick = {infoIconClickHandler} /> 
+      <InfoIcon className='InfoIcon' onClick = {showInfo} /> 
       <AccessTimeIcon/> <p className='time'>{renderTime(time)} </p>
       
      
@@ -48,6 +62,7 @@ export function QuizPanel({name, image, showTest, len, time }) {
       {renderLen(len)}
       <button className='button' onClick = {showTest}>Начать</button>
     </div>
+    </>
   );
 }
 //1 вопрос
