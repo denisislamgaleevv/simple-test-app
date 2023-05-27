@@ -19,9 +19,10 @@ body{
   margin-top: 8%;
   background: rgb(214,204,241); 
   width: 80%;
-  margin-left: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   min-height: 200px;
-  min-width: 200px;
+  width: 90%;
   border-radius: 15px;
   padding: 20px;
   display: flex;
@@ -38,6 +39,8 @@ body{
 }
 
 .questionText{
+  text-align: center;
+  align-items: center;
   margin-top: 10px;
   margin-bottom: 15px;
 }
@@ -72,11 +75,12 @@ body{
   align-items: center;
   border-radius: 15px;
   padding: 5px;
- 
+  transition: all 0.5s ease-in-out;
   border: 2px solid #666; 
   margin: 5px 0;
   outline: none;
 }
+ 
 .buttonRed{
   width: 100%;
   font-size: 16px;
@@ -87,43 +91,84 @@ body{
   align-items: center;
   border-radius: 15px;
   padding: 5px;
- 
+  transition: all 0.5s ease-in-out;
   border: 2px solid #666; 
   margin: 5px 0;
   outline: none;
 }
 .buttonNext{
-  margin-top: 30px;
-  width: 100%;
-  
+ 
   font-size: 16px;
   color: #000000; 
-  background-color:  rgb(255, 255, 255); 
   display: flex;
   justify-content: center;
-  align-items: center;
-  border-radius: 15px;
-  padding: 5px;
+  align-items: center;  
   cursor: pointer;
-  border: 2px solid #666; 
- 
   outline: none;
+  float: right;
 }
 .buttonNext:hover{
-  background-color:rgb(240, 237, 251); 
-  transition: all 0.3 ease;
+  transition: all 0.2s ease;
+  scale: 1.5;
+  
+}
+.buttonBack{
+  width: 100%;
+  font-size: 16px;
+  color: #000000; 
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  cursor: pointer;
+  outline: none;
+  
+}
+.listCheckerContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.listCheckerGreen{
+  height: 20px;
+  width: 20px;
+  background-color: rgb(124, 255, 133); 
+  color: white;
+  margin-right: 5px;
+  
+}
+.listCheckerRed{
+  height: 20px;
+  width: 20px;
+  background-color: rgb(255, 167, 143); 
+  color: white;
+  margin-right: 5px;
+  
+}
+.listChecker{
+  height: 20px;
+  width: 20px;
+  background-color: rgb(192, 192, 192); 
+  color: white;
+  margin-right: 5px;
+  
 }
 .button:hover{
-  background-color:rgb(240, 237, 251); 
-  transition: all 0.3 ease;
+ 
+  transition: all 0.5s ease;
+  background-color:rgb(254, 247, 193); 
 }
  
 .timeContainer{
-  margin-bottom: 15px;
+  display: flexbox;
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 
 }
 .timer{ 
-   
+  float: left;
+  padding-bottom: 10px;
 }
 .AccessTimeIcon{
   font-size: 10px;

@@ -4,8 +4,9 @@ import {React, useState, useEffect} from 'react';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt'; 
 import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
  
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 export const Quiz = ({questions, hideTest, time,  setMarathonVisibility, setMistakesArr, mistakesArr, mistakesVisibility}) => {
      
 
@@ -15,7 +16,8 @@ export const Quiz = ({questions, hideTest, time,  setMarathonVisibility, setMist
     const [buttonColorVisibility, setButtonColorVisibility] = useState(false)
     const [isCounting, setIsCounting]= useState(false)//timer
     const [timeLeft, setTimeLeft] = useState(time*60)  
-    const [correctedAnswerArr, setCorrectedAnswerArr]= useState([])  
+    const [correctedAnswerArr, setCorrectedAnswerArr]= useState([]) 
+    const [correctQuestionsArr, setCorrectQuestionsArr]= useState([])   
     const getPadTime = (time) =>time.toString().padStart(2, '0');;
     const minutes = getPadTime(Math.floor(timeLeft/60)); 
     const seconds = getPadTime(timeLeft - minutes*60); 
@@ -61,6 +63,9 @@ export const Quiz = ({questions, hideTest, time,  setMarathonVisibility, setMist
        // else 
        if (isCorrect && mistakesVisibility){
             setScore(score+1)
+            let copy = correctQuestionsArr
+            copy.push(questions[currentQuestion])
+            setCorrectQuestionsArr(copy)
         //    
         let t = correctedAnswerArr
         t.push(questions[currentQuestion])
@@ -68,6 +73,9 @@ export const Quiz = ({questions, hideTest, time,  setMarathonVisibility, setMist
         }
         else if (isCorrect){
             setScore(score+1)
+            let copy = correctQuestionsArr
+            copy.push(questions[currentQuestion])
+            setCorrectQuestionsArr(copy)
         }
         
         else if (!mistakesVisibility){
@@ -80,6 +88,9 @@ export const Quiz = ({questions, hideTest, time,  setMarathonVisibility, setMist
           //      }
           //      
           //  })
+            let copy = correctQuestionsArr
+            copy.push('not correct')
+            setCorrectQuestionsArr(copy)
             if (flag){ 
                 t.push(questions[currentQuestion]) 
                 const newArray= [].concat(t, mistakesArr)
@@ -144,7 +155,7 @@ export const Quiz = ({questions, hideTest, time,  setMarathonVisibility, setMist
                {mistakesVisibility? <><button className='button' onClick={ ()=>setMistakesArr([]) }>Очистить ошибки</button></>:<></>}
                </div>)
             }
-     
+      
      //(minutes.toString() === '00' && seconds.toString() === '00')
      // {(minutes.toString() === '00' && seconds.toString() === '00') ? <h3>Время вышло!</h3> : <></>}
   return (
@@ -163,14 +174,37 @@ export const Quiz = ({questions, hideTest, time,  setMarathonVisibility, setMist
     <div className='quiz'>
           
         <div className='questionSection'>
-        
-        <div className='timeContainer'>  
-          <p className='timer'>   <AccessTimeIcon className='AccessTimeIcon'/>  {minutes}  : {seconds}  </p> 
-        </div>
-        <h3 className='scoreHeader'>  Верных ответов: {score} из {currentQuestion+1}</h3>
+            <div>
+                
+            <div className='listCheckerContainer'> 
+            <p className='timer'>   <AccessTimeIcon className='AccessTimeIcon'/>  {minutes}  : {seconds} 
+           </p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
             <div className='questionCount'>
-                <span>Вопрос {currentQuestion +1}</span>/{questions.length}
+                <span>Вопрос {currentQuestion +1}</span>/{questions.length}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+            </div> 
+            {
+                questions.map((elem, index)=>
+                
+                <div className={
+                    correctQuestionsArr[index] !=undefined?
+                     correctQuestionsArr[index] != 'not correct'?
+                     'listCheckerGreen':'listCheckerRed' :
+                     'listChecker' }>
+                   {index+1}
+                     
+                </div>)
+            }
+             </div>
             </div>
+     
+       
+        <div className='timeContainer'>  
+          
+           <ArrowForwardIosIcon onClick={()=>handleNextQuestion()}
+                className='buttonNext'/> 
+        </div>
+         
+           
 
             <div className='questionText'>
               <h3>  {questions[currentQuestion].questionText}</h3>
@@ -202,11 +236,7 @@ export const Quiz = ({questions, hideTest, time,  setMarathonVisibility, setMist
             
 
             
-                 <button
-                onClick={()=>handleNextQuestion()}
-                className={'buttonNext'}
-                >{currentQuestion!=questions.length-1? 'Следующий вопрос': 'Завершить тест' }  <ArrowForwardIcon/></button>
-        </div>
+                    </div>
         
     </div>
      }
@@ -222,4 +252,5 @@ export const Quiz = ({questions, hideTest, time,  setMarathonVisibility, setMist
     </div>
   );
 }
- 
+     //<ArrowBackIosIcon  onClick={()=>handleNextQuestion()}
+        //        className={'buttonBack'} /> 
