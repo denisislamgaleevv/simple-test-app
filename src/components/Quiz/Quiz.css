@@ -167,6 +167,7 @@ body{
 
 }
 .timer{ 
+  white-space: nowrap;
   float: left;
   padding-bottom: 10px;
 }

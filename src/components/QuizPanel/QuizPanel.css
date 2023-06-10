@@ -1,3 +1,9 @@
+
+
+.body.scrollOff{
+    overflow: hidden;
+}
+
  
 .QuizPanel{
     text-align: center;
@@ -25,6 +31,7 @@
     float: right;
     cursor: pointer;
 }
+ 
 @media screen and (max-width: 800px) {
     .QuizPanel   {
         width: 300px;

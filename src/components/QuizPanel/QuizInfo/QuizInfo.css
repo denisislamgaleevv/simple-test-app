@@ -13,8 +13,9 @@
     align-items: center;
     padding-left: 20%;
     padding-right: 20%;
-    padding-top: 20%;
-    padding-bottom: 20%;
+    padding-top: 10%;
+    padding-bottom:10%;
+   
 }
 
 .QuizInfoPanel{
@@ -26,6 +27,15 @@
     padding: 5px 5px 5px 5px;
      
     
+}
+.mainInfo{
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 10%;
+    padding-bottom:10%;
+}
+.mainInfo h3, p, h4{
+    padding-top: 4%;
 }
 .CloseIcon{
     float: right;

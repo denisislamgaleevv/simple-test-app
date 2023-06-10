@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
-
+.body-lock-scroll {
+  overflow: hidden;
+}
 .panel{
   
   display: grid;

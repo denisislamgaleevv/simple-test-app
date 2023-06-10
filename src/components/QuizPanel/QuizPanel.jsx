@@ -2,7 +2,10 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import InfoIcon from '@mui/icons-material/Info';
 import './QuizPanel.css';
 import { QuizInfo } from './QuizInfo/QuizInfo';
-export function QuizPanel({copyArr, name,  id, quizDescription, author, showTest, len, time, showInfo, infoVisibility,  setInfoVisibility, num}) {
+import { React, useState, useEffect} from 'react';
+export function QuizPanel({questions, copyArr,  author, name,  id, quizDescription,  showTest, len, time, showInfo, 
+  infoVisibility, 
+   setInfoVisibility, num}) {
    
   function renderLen(l) {
     if (len %10 == 1 && len !== 11) {
@@ -30,29 +33,48 @@ export function QuizPanel({copyArr, name,  id, quizDescription, author, showTest
   }
   const hideInfo = () =>{
     setInfoVisibility(false)
+    document.body.classList.remove('body-lock-scroll');
+  }
+  
+  const [element, setElement] = useState(null);
+  const renderElement = () => {
     
+    return <QuizInfo 
+      id = {id}
+      time = {time}
+      hideInfo = {hideInfo}
+      showInfo = {showInfo}
+      name = {name}
+      quizDescription = {quizDescription }
+      author={author}
+      renderTime = {renderTime}
+   />;
+    
+  };
+
+   
+  const infoButtonClickHandler = event =>{
+    const id = event.currentTarget.id;
+    console.log(id)
+    const elem =  renderElement()
+    setElement(elem)
+    setInfoVisibility(true)
+     
   }
   return (
     <>  
-    {infoVisibility? 
+    { 
       <>{
-          
-    <QuizInfo 
-    quizDescription = {copyArr[num].quizDescription}
-    author = {copyArr[num].author}
-    hideInfo = {hideInfo}
-    time = {time}
-    name = {copyArr[num].name}
-    
-    />
+        infoVisibility?
+        element  : <></>
      
     }</>   
-    :<></> }
+     }
     <div className="QuizPanel">
          
 
       <div className='timeDiv'>  
-      <InfoIcon className='InfoIcon' onClick = {showInfo} /> 
+      <InfoIcon className='InfoIcon' id = {id} onClick = {infoButtonClickHandler}     /> 
       <AccessTimeIcon/> <p className='time'>{renderTime(time)} </p>
       
      

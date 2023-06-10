@@ -10,7 +10,8 @@
     top: 35%;
     width: 50%;
     right: 25%;
-    background-color: rgb(214,204,241);
+    background-color: rgb(214,204,241, 1);
     border-radius: 15px;
     padding: 10px 10px 10px 10px;
+    border: 2px solid #666; 
 }
